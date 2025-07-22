@@ -6,6 +6,7 @@ import CloseIcon from './img/icons/close.png'
 import MinimizeIcon from './img/icons/minimize.png'
 import MaximizeIcon from './img/icons/maximize.png'
 import MoogleIcon from './img/icons/moogle.png'
+import { hslToRgb } from './utils'
 
 export const initTitle = () => {
     // const titleImage = document.createElement('img');
@@ -117,31 +118,33 @@ export const initSettingsSection = () => {
     appDiv.append(settingsContainer)
 }
 
-export const initColorPickerSection = () => {
-    const appDiv = document.querySelector('#app')
+// export const initColorPickerSection = () => {
+//     const appDiv = document.querySelector('#app')
 
-    const sectionContainer = document.createElement('div')
-    sectionContainer.id = 'color-select-container'
-    sectionContainer.classList.add('grid-section')
-    const titleContainer = document.createElement('div')
-    const colorTitle = document.createElement('h3')
-    colorTitle.classList.add('section-title')
-    colorTitle.textContent = 'color'
-    const contentContainer = document.createElement('div')
+//     const sectionContainer = document.createElement('div')
+//     sectionContainer.id = 'color-select-container'
+//     sectionContainer.classList.add('grid-section')
+//     const titleContainer = document.createElement('div')
+//     const colorTitle = document.createElement('h3')
+//     colorTitle.classList.add('section-title')
+//     colorTitle.textContent = 'color'
+//     const contentContainer = document.createElement('div')
 
-    titleContainer.append(colorTitle)
-    sectionContainer.append(titleContainer, contentContainer)
-    appDiv.append(sectionContainer)
-}
+//     titleContainer.append(colorTitle)
+//     sectionContainer.append(titleContainer, contentContainer)
+//     appDiv.append(sectionContainer)
+// }
 
 export class CharacterPartSelect {
     constructor(){
         this.characterPartSectionContainer = document.createElement('div')
         this.characterPartSectionContainer.id = 'character-part-select-container'
         this.characterPartSectionContainer.classList.add('grid-section')
-        this.sections = [new HairSection('hair', this.characterPartSectionContainer), new HeadSection('head', this.characterPartSectionContainer), new TorsoSection('torso', this.characterPartSectionContainer), new LegsSection('legs', this.characterPartSectionContainer)]
+        this.sections = [new HairSection('hair', this.characterPartSectionContainer, true), new HeadSection('head', this.characterPartSectionContainer, false), new TorsoSection('torso', this.characterPartSectionContainer, false), new LegsSection('legs', this.characterPartSectionContainer, false)]
         this.selected = this.sections[0]
+        console.log("SELECTED: ", this.selected)
         this.init()
+        
     }
 
     init = () => {
@@ -178,13 +181,11 @@ export class CharacterPartSelect {
     }
 
     setSelected = (subSectionTitle) => {
-        console.log(subSectionTitle)
         //first, set this.selected to the title of whichever li clicked
         this.selected = subSectionTitle
         //then, set all sub sections to hidden except the one
         //corresponding to the one clicked
         const subSections = document.querySelectorAll(".character-part-content-section")
-        console.log(subSections)
         subSections.forEach(subSection => {
             if(!subSection.id.includes(subSectionTitle)){
                 subSection.classList.add("hidden")
@@ -195,16 +196,21 @@ export class CharacterPartSelect {
 }
 
 class CharacterPartSubSection {
-    constructor(subSectionTitle, parentContainer){
+    constructor(subSectionTitle, parentContainer, initAsSelected){
         this.subSectionTitle = subSectionTitle
         this.parentContainer = parentContainer
+        this.initAsSelected = initAsSelected
+
+        this.colorCanvasHeight = 128
+        this.colorCanvasWidth = 128
+
         this.init()
     }
 
     init = () => {
         this.container = document.createElement('div')
         this.container.classList.add('character-part-content-section')
-        if(this.selected != this.subSectionTitle){this.container.classList.add('hidden')}
+        if(!this.selected){this.container.classList.add('hidden')}
         this.container.id = `${this.subSectionTitle}-container`
 
         this.subSectionHeader = document.createElement('h5')
@@ -212,13 +218,72 @@ class CharacterPartSubSection {
 
         this.container.append(this.subSectionTitle)
         this.parentContainer.append(this.container)
+
+    }
+
+    initColorPicker = () => {
+        //init's THIS sub section's color picker
+        const appDiv = document.querySelector('#app')
+
+        this.colorPickerContainer = document.createElement('div')
+        this.colorPickerContainer.id = `${this.subSectionTitle}-color-select-container`
+        this.colorTitleContainer = document.createElement('div')
+        this.colorTitleContainer.classList.add('color-title-container')
+        this.colorPickerTitle = document.createElement('h3')
+        this.colorPickerTitle.classList.add('section-title')
+        this.colorPickerTitle.textContent = `${this.subSectionTitle} color`
+        this.colorContentContainer = document.createElement('div')
+        this.colorContentContainer.classList.add('color-canvas-container')
+        this.colorCanvas = document.createElement('canvas')
+        this.colorCanvas.classList.add('color-canvas')
+        this.colorCanvas.id=`${this.subSectionTitle}-color-canvas`
+        this.colorCanvas.height = this.colorCanvasHeight
+        this.colorCanvas.width = this.colorCanvasWidth
+        this.initColorCanvas()
+
+        this.colorTitleContainer.append(this.colorPickerTitle)
+        this.colorContentContainer.append(this.colorCanvas)
+        this.colorPickerContainer.append(this.colorTitleContainer, this.colorContentContainer)
+        this.container.append(this.colorPickerContainer)
+    }
+
+    initColorCanvas = () => {
+        this.ctx = this.colorCanvas.getContext('2d')
+        let imageData = this.ctx.createImageData(this.colorCanvasWidth, this.colorCanvasHeight);
+
+        for (let y = 0; y < this.colorCanvasHeight; y++) {
+        const hue = (y / this.colorCanvasHeight) * 360; // hue from 0 to 360 vertically
+
+        for (let x = 0; x < this.colorCanvasWidth; x++) {
+            const saturation = x / this.colorCanvasWidth; // saturation from 0 (white) to 1 (full color)
+            const lightness = 0.5; // fixed lightness, can also let this vary for brightness
+
+            const [r, g, b] = hslToRgb(hue, saturation, lightness);
+            const index = (y * this.colorCanvasWidth + x) * 4;
+
+            imageData.data[index] = r;
+            imageData.data[index + 1] = g;
+            imageData.data[index + 2] = b;
+            imageData.data[index + 3] = 255;
+        }
+        }
+
+        this.ctx.putImageData(imageData, 0, 0);
+
+        //add click event for color selection
+        this.colorCanvas.addEventListener("click", this.handleColorCanvasClick)
+    }
+
+    handleColorCanvasClick = () => {
+        console.log(`clicked the color canvas on the ${this.subSectionTitle}`)
     }
 }
 
 class HairSection extends CharacterPartSubSection{
-    constructor(subSectionTitle, parentContainer){
-        super(subSectionTitle, parentContainer)
+    constructor(subSectionTitle, parentContainer, initAsSelected){
+        super(subSectionTitle, parentContainer, initAsSelected)
         this.initHairSection()
+        this.initColorPicker()
     }
 
     initHairSection = () => {
@@ -246,9 +311,10 @@ class HairSection extends CharacterPartSubSection{
 }
 
 class HeadSection extends CharacterPartSubSection{
-    constructor(subSectionTitle, parentContainer){
-        super(subSectionTitle, parentContainer)
+    constructor(subSectionTitle, parentContainer, initAsSelected){
+        super(subSectionTitle, parentContainer, initAsSelected)
         this.initHeadSection()
+        this.initColorPicker()
     }
 
     initHeadSection = () => {
@@ -268,9 +334,10 @@ class HeadSection extends CharacterPartSubSection{
 }
 
 class TorsoSection extends CharacterPartSubSection{
-    constructor(subSectionTitle, parentContainer){
-        super(subSectionTitle, parentContainer)
+    constructor(subSectionTitle, parentContainer, initAsSelected){
+        super(subSectionTitle, parentContainer, initAsSelected)
         this.initTorsoSection()
+        this.initColorPicker()
     }
 
     initTorsoSection = () => {
@@ -290,9 +357,10 @@ class TorsoSection extends CharacterPartSubSection{
 }
 
 class LegsSection extends CharacterPartSubSection{
-    constructor(subSectionTitle, parentContainer){
-        super(subSectionTitle, parentContainer)
+    constructor(subSectionTitle, parentContainer, initAsSelected){
+        super(subSectionTitle, parentContainer, initAsSelected)
         this.initLegsSection()
+        this.initColorPicker()
     }
 
     initLegsSection = () => {
