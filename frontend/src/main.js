@@ -1,9 +1,9 @@
-import { initTitle, initCanvas, initNameSelection, initSettingsSection, initCharacterPartSection, initColorPickerSection } from './domStuff'
+import { CharacterPartSelect, initTitle, initCanvas, initNameSelection, initSettingsSection, initColorPickerSection } from './domStuff'
 import './style.css'
 
 initTitle()
 await initCanvas()
 initNameSelection()
 initSettingsSection()
-initCharacterPartSection()
+const characerPartSection = new CharacterPartSelect()
 initColorPickerSection()

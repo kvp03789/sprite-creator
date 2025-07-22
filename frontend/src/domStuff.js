@@ -1,11 +1,40 @@
 import * as PIXI from 'pixi.js'
 import TitleImg from './img/title.png'
+import ArrowRight from  './img/icons/arrow-right.gif'
+import ArrowLeft from  './img/icons/arrow-left.gif'
+import CloseIcon from './img/icons/close.png'
+import MinimizeIcon from './img/icons/minimize.png'
+import MaximizeIcon from './img/icons/maximize.png'
+import MoogleIcon from './img/icons/moogle.png'
 
 export const initTitle = () => {
-    const titleImage = document.createElement('img');
-    titleImage.src = TitleImg
-    titleImage.id = "title-img"
-    document.body.prepend(titleImage)
+    // const titleImage = document.createElement('img');
+    // titleImage.src = TitleImg
+    // titleImage.id = "title-img"
+    // document.body.prepend(titleImage)
+
+    //init top window bar
+    const appDiv = document.querySelector('#app')
+    const topDivBar = document.createElement('div')
+    const iconsContainer = document.createElement('div')
+    const titleContainer = document.createElement('div')
+    const titleText = document.createElement('h5')
+    const moogleIcon = new Image()
+    moogleIcon.src = MoogleIcon
+    titleText.textContent = 'kvp0\'s_sprite_creator'
+    topDivBar.id = 'top-bar'
+    titleContainer.id = 'top-bar-title-container'
+    iconsContainer.id = 'top-bar-icons-container'
+    const closeButton = new Image()
+    closeButton.src = CloseIcon
+    const minimizeButton = new Image()
+    minimizeButton.src = MinimizeIcon
+    const maximizeButton = new Image()
+    maximizeButton.src = MaximizeIcon
+    titleContainer.append(moogleIcon, titleText)
+    iconsContainer.append(minimizeButton, maximizeButton, closeButton)
+    topDivBar.append(titleContainer, iconsContainer)
+    appDiv.append(topDivBar)
 }
 
 export const initCanvas = async() => {
@@ -23,7 +52,6 @@ export const initCanvas = async() => {
 
     canvasDiv.append(app.canvas)
     appDiv.append(canvasDiv)
-    console.log('canvas inited')
 }
 
 export const initNameSelection = () => {
@@ -89,39 +117,6 @@ export const initSettingsSection = () => {
     appDiv.append(settingsContainer)
 }
 
-export const initCharacterPartSection = () => {
-    const appDiv = document.querySelector('#app')
-
-    const navDiv = document.createElement('div')
-    navDiv.id = 'character-part-select-container'
-    navDiv.classList.add('grid-section')
-    const partSelectList = document.createElement('ul')
-
-    const hairListItem = document.createElement('li')
-    const hairTitle = document.createElement('h3')
-    hairTitle.textContent = 'hair' 
-    hairListItem.append(hairTitle)
-
-    const headListItem = document.createElement('li')
-    const headTitle = document.createElement('h3')
-    headTitle.textContent = 'head' 
-    headListItem.append(headTitle)
-
-    const torsoListItem = document.createElement('li')
-    const torsoTitle = document.createElement('h3')
-    torsoTitle.textContent = 'torso' 
-    torsoListItem.append(torsoTitle)
-
-    const legListItem = document.createElement('li')
-    const legTitle = document.createElement('h3')
-    legTitle.textContent = 'leg' 
-    legListItem.append(legTitle)
-
-    partSelectList.append(hairListItem, headListItem, torsoListItem, legListItem)
-    navDiv.append(partSelectList)
-    appDiv.append(navDiv)
-}
-
 export const initColorPickerSection = () => {
     const appDiv = document.querySelector('#app')
 
@@ -137,4 +132,181 @@ export const initColorPickerSection = () => {
     titleContainer.append(colorTitle)
     sectionContainer.append(titleContainer, contentContainer)
     appDiv.append(sectionContainer)
+}
+
+export class CharacterPartSelect {
+    constructor(){
+        this.characterPartSectionContainer = document.createElement('div')
+        this.characterPartSectionContainer.id = 'character-part-select-container'
+        this.characterPartSectionContainer.classList.add('grid-section')
+        this.sections = [new HairSection('hair', this.characterPartSectionContainer), new HeadSection('head', this.characterPartSectionContainer), new TorsoSection('torso', this.characterPartSectionContainer), new LegsSection('legs', this.characterPartSectionContainer)]
+        this.selected = this.sections[0]
+        this.init()
+    }
+
+    init = () => {
+        const appDiv = document.querySelector('#app')
+
+        const partSelectList = document.createElement('ul')
+
+        //init the different sections
+        this.sections.forEach(section => {
+            const sectionListItem = document.createElement('li')
+            const sectionTitle = document.createElement('h3')
+            sectionTitle.textContent = `${section.subSectionTitle}`
+            sectionListItem.append(sectionTitle)
+            partSelectList.append(sectionListItem)
+            this.initEvents(sectionListItem)
+        })
+
+        this.characterPartSectionContainer.prepend(partSelectList)
+        appDiv.append(this.characterPartSectionContainer)
+
+
+    }
+
+    initEvents = (li) => {
+        li.addEventListener("mouseenter", () => {
+            li.classList.add("highlight")
+        })
+
+        li.addEventListener("mouseleave", () => {
+            li.classList.remove("highlight")
+        })
+
+        li.addEventListener("click", () => {this.setSelected(li.textContent)})
+    }
+
+    setSelected = (subSectionTitle) => {
+        console.log(subSectionTitle)
+        //first, set this.selected to the title of whichever li clicked
+        this.selected = subSectionTitle
+        //then, set all sub sections to hidden except the one
+        //corresponding to the one clicked
+        const subSections = document.querySelectorAll(".character-part-content-section")
+        console.log(subSections)
+        subSections.forEach(subSection => {
+            if(!subSection.id.includes(subSectionTitle)){
+                subSection.classList.add("hidden")
+            }
+            else subSection.classList.remove("hidden")
+        })
+    }
+}
+
+class CharacterPartSubSection {
+    constructor(subSectionTitle, parentContainer){
+        this.subSectionTitle = subSectionTitle
+        this.parentContainer = parentContainer
+        this.init()
+    }
+
+    init = () => {
+        this.container = document.createElement('div')
+        this.container.classList.add('character-part-content-section')
+        if(this.selected != this.subSectionTitle){this.container.classList.add('hidden')}
+        this.container.id = `${this.subSectionTitle}-container`
+
+        this.subSectionHeader = document.createElement('h5')
+        this.subSectionHeader.textContent = this.subSectionTitle
+
+        this.container.append(this.subSectionTitle)
+        this.parentContainer.append(this.container)
+    }
+}
+
+class HairSection extends CharacterPartSubSection{
+    constructor(subSectionTitle, parentContainer){
+        super(subSectionTitle, parentContainer)
+        this.initHairSection()
+    }
+
+    initHairSection = () => {
+        this.selectContainer = document.createElement("div")
+        this.selectContainer.classList.add("character-part-select-container")
+        this.leftArrow = new Image()
+        this.leftArrow.src = ArrowLeft
+        this.leftArrow.classList.add("nav-arrow")
+        this.rightArrow = new Image()
+        this.rightArrow.src = ArrowRight
+        this.rightArrow.classList.add("nav-arrow")
+        this.selectionDiv = document.createElement('div')
+        this.selectionDiv.classList.add("selection-preview-box")
+        this.selectContainer.append(this.leftArrow, this.selectionDiv, this.rightArrow)
+
+        this.leftArrow.addEventListener("click", ()  => {
+
+        })
+        this.rightArrow.addEventListener("click", () => {
+
+        })
+
+        this.container.append(this.selectContainer)
+    }
+}
+
+class HeadSection extends CharacterPartSubSection{
+    constructor(subSectionTitle, parentContainer){
+        super(subSectionTitle, parentContainer)
+        this.initHeadSection()
+    }
+
+    initHeadSection = () => {
+        this.selectContainer = document.createElement("div")
+        this.selectContainer.classList.add("character-part-select-container")
+        this.leftArrow = new Image()
+        this.leftArrow.src = ArrowLeft
+        this.leftArrow.classList.add("nav-arrow")
+        this.rightArrow = new Image()
+        this.rightArrow.src = ArrowRight
+        this.rightArrow.classList.add("nav-arrow")
+        this.selectionDiv = document.createElement('div')
+        this.selectionDiv.classList.add("selection-preview-box")
+        this.selectContainer.append(this.leftArrow, this.selectionDiv, this.rightArrow)        
+        this.container.append(this.selectContainer)
+    }
+}
+
+class TorsoSection extends CharacterPartSubSection{
+    constructor(subSectionTitle, parentContainer){
+        super(subSectionTitle, parentContainer)
+        this.initTorsoSection()
+    }
+
+    initTorsoSection = () => {
+        this.selectContainer = document.createElement("div")
+        this.selectContainer.classList.add("character-part-select-container")
+        this.leftArrow = new Image()
+        this.leftArrow.src = ArrowLeft
+        this.leftArrow.classList.add("nav-arrow")
+        this.rightArrow = new Image()
+        this.rightArrow.src = ArrowRight
+        this.rightArrow.classList.add("nav-arrow")
+        this.selectionDiv = document.createElement('div')
+        this.selectionDiv.classList.add("selection-preview-box")
+        this.selectContainer.append(this.leftArrow, this.selectionDiv, this.rightArrow)        
+        this.container.append(this.selectContainer)
+    }
+}
+
+class LegsSection extends CharacterPartSubSection{
+    constructor(subSectionTitle, parentContainer){
+        super(subSectionTitle, parentContainer)
+        this.initLegsSection()
+    }
+
+    initLegsSection = () => {
+        this.selectContainer = document.createElement("div")
+        this.selectContainer.classList.add("character-part-select-container")
+        this.leftArrow = new Image()
+        this.leftArrow.src = ArrowLeft
+        this.leftArrow.classList.add("nav-arrow")
+        this.rightArrow = new Image()
+        this.rightArrow.src = ArrowRight
+        this.rightArrow.classList.add("nav-arrow")
+        this.selectionDiv = document.createElement('div')
+        this.selectionDiv.classList.add("selection-preview-box")
+        this.selectContainer.append(this.leftArrow, this.selectionDiv, this.rightArrow)        
+        this.container.append(this.selectContainer)
+    }
 }
