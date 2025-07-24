@@ -177,10 +177,10 @@ export class CharacterPartSelect {
             li.classList.remove("highlight")
         })
 
-        li.addEventListener("click", () => {this.setSelected(li.textContent)})
+        li.addEventListener("click", () => {this.setSelected(li.textContent, li)})
     }
 
-    setSelected = (subSectionTitle) => {
+    setSelected = (subSectionTitle, liElement) => {
         //first, set this.selected to the title of whichever li clicked
         this.selected = subSectionTitle
         //then, set all sub sections to hidden except the one
@@ -192,6 +192,10 @@ export class CharacterPartSelect {
             }
             else subSection.classList.remove("hidden")
         })
+
+        //whichever <li> clicked should get the "selected" class
+        const liNodeList = document.querySelectorAll('li')
+        liNodeList.forEach(li => li.textContent != subSectionTitle ? li.classList?.remove("selected") : li.classList.add("selected"))
     }
 }
 
@@ -203,7 +207,12 @@ class CharacterPartSubSection {
 
         this.colorCanvasHeight = 128
         this.colorCanvasWidth = 128
+        //an array that holds the color presets that are used to create 
+        //the color swatch grid 
+        this.presetColorsArray = []
 
+        this.initPresetColorsArray()
+        console.log(this.presetColors)
         this.init()
     }
 
@@ -239,12 +248,46 @@ class CharacterPartSubSection {
         this.colorCanvas.id=`${this.subSectionTitle}-color-canvas`
         this.colorCanvas.height = this.colorCanvasHeight
         this.colorCanvas.width = this.colorCanvasWidth
+        //initColorCanvas inits the canvas's hsl square
         this.initColorCanvas()
+        
+        //init color preview section
+        this.colorPreviewContainer = document.createElement('div')
+        this.colorPreviewContainer.id = 'color-preview-container'
+        //init 3 columns to contain all the color presets/swatches
+        //each column contains 6 swatches
+        for(let i = 1; i <= 3; i++){
+            this[`colorPreviewColumn${i}`] = document.createElement('div')
+            this[`colorPreviewColumn${i}`].id=`color-preview-column-${i}`
+            this[`colorPreviewColumn${i}`].classList.add('color-preview-column')
+            this.colorPreviewContainer.append(this[`colorPreviewColumn${i}`])
+
+            //init each column with 6 colors
+            const numberOfPreviewsPerColumn = 6
+            for(let j = 0; j < numberOfPreviewsPerColumn; j++){
+                this[`colorSwatch${j}`] = document.createElement('div')
+                this[`colorSwatch${j}`].id = `color-swatch-${j}`
+                this[`colorSwatch${j}`].classList.add('color-swatch')
+                //set the custom data-color attribute. the value of this
+                //will correspond to one of the swatch color values
+                //init this.presetColorsArray
+                this[`colorSwatch${j}`].setAttribute('data-color', `${this.presetColorsArray[i*j]}`)
+                // console.log(this[`colorSwatch${j}`].dataset.color)
+                this[`colorSwatch${j}`].style.backgroundColor = this[`colorSwatch${j}`].dataset.color
+                this[`colorPreviewColumn${i}`].append(this[`colorSwatch${j}`])
+            }
+        }
 
         this.colorTitleContainer.append(this.colorPickerTitle)
         this.colorContentContainer.append(this.colorCanvas)
-        this.colorPickerContainer.append(this.colorTitleContainer, this.colorContentContainer)
+        this.colorPickerContainer.append(this.colorTitleContainer, this.colorContentContainer, this.colorPreviewContainer)
         this.container.append(this.colorPickerContainer)
+    }
+
+    initPresetColorsArray = () => {
+        for (let h = 0; h < 360; h += 20) {
+            this.presetColorsArray.push(`hsl(${h}, 100%, 50%)`);
+        }
     }
 
     initColorCanvas = () => {
