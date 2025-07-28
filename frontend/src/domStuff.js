@@ -38,22 +38,6 @@ export const initTitle = () => {
     appDiv.append(topDivBar)
 }
 
-export const initCanvas = async() => {
-    const appDiv = document.querySelector('#app')
-
-    const canvasDiv = document.createElement('div')
-    canvasDiv.id = 'canvas-div'
-    canvasDiv.classList.add('grid-section')
-
-    const width = 256
-    const height = 256
-    const app = new PIXI.Application()
-    await app.init({width, height})
-    app.canvas.id="preview-canvas"
-
-    canvasDiv.append(app.canvas)
-    appDiv.append(canvasDiv)
-}
 
 export const initNameSelection = () => {
     const appDiv = document.querySelector('#app')
