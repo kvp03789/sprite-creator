@@ -91,6 +91,13 @@ body {
   
 }
 
+.color-select-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
 /* grid section 2 */
 #name-select-container{
   grid-column: 1;

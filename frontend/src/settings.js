@@ -1,6 +1,8 @@
 const settings = {
     CANVAS_WIDTH: 64,   
-    CANVAS_HEIGHT: 64
+    CANVAS_HEIGHT: 64,
+    ANIMATION_SPEED: .15,
+    SPRITE_SCALE: 1.5
 }
 
-export const { CANVAS_HEIGHT, CANVAS_WIDTH } = settings
+export const { CANVAS_HEIGHT, CANVAS_WIDTH, ANIMATION_SPEED, SPRITE_SCALE } = settings

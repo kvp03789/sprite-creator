@@ -1,5 +1,5 @@
 { "frames": {
-   "sprite_template_0.aseprite": {
+   "sprite_template_idle_down_0.aseprite": {
     "frame": { "x": 0, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -7,7 +7,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_1.aseprite": {
+   "sprite_template_idle_down_1.aseprite": {
     "frame": { "x": 30, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -15,7 +15,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_2.aseprite": {
+   "sprite_template_idle_down_2.aseprite": {
     "frame": { "x": 60, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -23,7 +23,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_3.aseprite": {
+   "sprite_template_idle_down_3.aseprite": {
     "frame": { "x": 90, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -31,7 +31,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_4.aseprite": {
+   "sprite_template_idle_down_4.aseprite": {
     "frame": { "x": 120, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -39,7 +39,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_5.aseprite": {
+   "sprite_template_idle_down_5.aseprite": {
     "frame": { "x": 150, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -47,7 +47,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_6.aseprite": {
+   "sprite_template_idle_right_6.aseprite": {
     "frame": { "x": 180, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -55,7 +55,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_7.aseprite": {
+   "sprite_template_idle_right_7.aseprite": {
     "frame": { "x": 210, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -63,7 +63,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_8.aseprite": {
+   "sprite_template_idle_right_8.aseprite": {
     "frame": { "x": 240, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -71,7 +71,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_9.aseprite": {
+   "sprite_template_idle_right_9.aseprite": {
     "frame": { "x": 270, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -79,7 +79,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_10.aseprite": {
+   "sprite_template_idle_right_10.aseprite": {
     "frame": { "x": 300, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -87,7 +87,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_11.aseprite": {
+   "sprite_template_idle_right_11.aseprite": {
     "frame": { "x": 330, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -95,7 +95,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_12.aseprite": {
+   "sprite_template_idle_left_12.aseprite": {
     "frame": { "x": 360, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -103,7 +103,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_13.aseprite": {
+   "sprite_template_idle_left_13.aseprite": {
     "frame": { "x": 390, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -111,7 +111,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_14.aseprite": {
+   "sprite_template_idle_left_14.aseprite": {
     "frame": { "x": 420, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -119,7 +119,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_15.aseprite": {
+   "sprite_template_idle_left_15.aseprite": {
     "frame": { "x": 450, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -127,7 +127,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_16.aseprite": {
+   "sprite_template_idle_left_16.aseprite": {
     "frame": { "x": 480, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -135,7 +135,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_17.aseprite": {
+   "sprite_template_idle_left_17.aseprite": {
     "frame": { "x": 510, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -143,7 +143,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_18.aseprite": {
+   "sprite_template_idle_up_18.aseprite": {
     "frame": { "x": 540, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -151,7 +151,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_19.aseprite": {
+   "sprite_template_idle_up_19.aseprite": {
     "frame": { "x": 570, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -159,7 +159,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_20.aseprite": {
+   "sprite_template_idle_up_20.aseprite": {
     "frame": { "x": 600, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -167,7 +167,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_21.aseprite": {
+   "sprite_template_idle_up_21.aseprite": {
     "frame": { "x": 630, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -175,7 +175,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_22.aseprite": {
+   "sprite_template_idle_up_22.aseprite": {
     "frame": { "x": 660, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -183,7 +183,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_23.aseprite": {
+   "sprite_template_idle_up_23.aseprite": {
     "frame": { "x": 690, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -191,7 +191,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_24.aseprite": {
+   "sprite_template_run_down_24.aseprite": {
     "frame": { "x": 720, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -199,7 +199,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_25.aseprite": {
+   "sprite_template_run_down_25.aseprite": {
     "frame": { "x": 750, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -207,7 +207,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_26.aseprite": {
+   "sprite_template_run_down_26.aseprite": {
     "frame": { "x": 780, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -215,7 +215,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_27.aseprite": {
+   "sprite_template_run_down_27.aseprite": {
     "frame": { "x": 810, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -223,7 +223,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_28.aseprite": {
+   "sprite_template_run_down_28.aseprite": {
     "frame": { "x": 840, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -231,7 +231,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_29.aseprite": {
+   "sprite_template_run_down_29.aseprite": {
     "frame": { "x": 870, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -239,7 +239,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_30.aseprite": {
+   "sprite_template_run_down_30.aseprite": {
     "frame": { "x": 900, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -247,7 +247,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_31.aseprite": {
+   "sprite_template_run_right_31.aseprite": {
     "frame": { "x": 930, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -255,7 +255,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_32.aseprite": {
+   "sprite_template_run_right_32.aseprite": {
     "frame": { "x": 960, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -263,7 +263,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_33.aseprite": {
+   "sprite_template_run_right_33.aseprite": {
     "frame": { "x": 990, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -271,7 +271,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_34.aseprite": {
+   "sprite_template_run_right_34.aseprite": {
     "frame": { "x": 1020, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -279,7 +279,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_35.aseprite": {
+   "sprite_template_run_right_35.aseprite": {
     "frame": { "x": 1050, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -287,7 +287,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_36.aseprite": {
+   "sprite_template_run_right_36.aseprite": {
     "frame": { "x": 1080, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -295,7 +295,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_37.aseprite": {
+   "sprite_template_run_right_37.aseprite": {
     "frame": { "x": 1110, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -303,7 +303,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_38.aseprite": {
+   "sprite_template_run_left_38.aseprite": {
     "frame": { "x": 1140, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -311,7 +311,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_39.aseprite": {
+   "sprite_template_run_left_39.aseprite": {
     "frame": { "x": 1170, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -319,7 +319,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_40.aseprite": {
+   "sprite_template_run_left_40.aseprite": {
     "frame": { "x": 1200, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -327,7 +327,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_41.aseprite": {
+   "sprite_template_run_left_41.aseprite": {
     "frame": { "x": 1230, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -335,7 +335,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_42.aseprite": {
+   "sprite_template_run_left_42.aseprite": {
     "frame": { "x": 1260, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -343,7 +343,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_43.aseprite": {
+   "sprite_template_run_left_43.aseprite": {
     "frame": { "x": 1290, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -351,7 +351,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_44.aseprite": {
+   "sprite_template_run_left_44.aseprite": {
     "frame": { "x": 1320, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -359,7 +359,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_45.aseprite": {
+   "sprite_template_run_up_45.aseprite": {
     "frame": { "x": 1350, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -367,7 +367,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_46.aseprite": {
+   "sprite_template_run_up_46.aseprite": {
     "frame": { "x": 1380, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -375,7 +375,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_47.aseprite": {
+   "sprite_template_run_up_47.aseprite": {
     "frame": { "x": 1410, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -383,7 +383,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_48.aseprite": {
+   "sprite_template_run_up_48.aseprite": {
     "frame": { "x": 1440, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -391,7 +391,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_49.aseprite": {
+   "sprite_template_run_up_49.aseprite": {
     "frame": { "x": 1470, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -399,7 +399,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_50.aseprite": {
+   "sprite_template_run_up_50.aseprite": {
     "frame": { "x": 1500, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -407,7 +407,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_51.aseprite": {
+   "sprite_template_run_up_51.aseprite": {
     "frame": { "x": 1530, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -415,7 +415,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_52.aseprite": {
+   "sprite_template_dash_down_52.aseprite": {
     "frame": { "x": 1560, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -423,7 +423,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_53.aseprite": {
+   "sprite_template_dash_down_53.aseprite": {
     "frame": { "x": 1590, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -431,7 +431,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_54.aseprite": {
+   "sprite_template_dash_down_54.aseprite": {
     "frame": { "x": 1620, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -439,7 +439,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_55.aseprite": {
+   "sprite_template_dash_down_55.aseprite": {
     "frame": { "x": 1650, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -447,7 +447,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_56.aseprite": {
+   "sprite_template_dash_down_56.aseprite": {
     "frame": { "x": 1680, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -455,7 +455,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_57.aseprite": {
+   "sprite_template_dash_down_57.aseprite": {
     "frame": { "x": 1710, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -463,7 +463,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_58.aseprite": {
+   "sprite_template_dash_down_58.aseprite": {
     "frame": { "x": 1740, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -471,7 +471,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_59.aseprite": {
+   "sprite_template_dash_right_59.aseprite": {
     "frame": { "x": 1770, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -479,7 +479,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_60.aseprite": {
+   "sprite_template_dash_right_60.aseprite": {
     "frame": { "x": 1800, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -487,7 +487,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_61.aseprite": {
+   "sprite_template_dash_right_61.aseprite": {
     "frame": { "x": 1830, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -495,7 +495,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_62.aseprite": {
+   "sprite_template_dash_right_62.aseprite": {
     "frame": { "x": 1860, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -503,7 +503,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_63.aseprite": {
+   "sprite_template_dash_right_63.aseprite": {
     "frame": { "x": 1890, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -511,7 +511,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_64.aseprite": {
+   "sprite_template_dash_right_64.aseprite": {
     "frame": { "x": 1920, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -519,7 +519,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_65.aseprite": {
+   "sprite_template_dash_right_65.aseprite": {
     "frame": { "x": 1950, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -527,7 +527,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_66.aseprite": {
+   "sprite_template_dash_left_66.aseprite": {
     "frame": { "x": 1980, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -535,7 +535,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_67.aseprite": {
+   "sprite_template_dash_left_67.aseprite": {
     "frame": { "x": 2010, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -543,7 +543,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_68.aseprite": {
+   "sprite_template_dash_left_68.aseprite": {
     "frame": { "x": 2040, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -551,7 +551,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_69.aseprite": {
+   "sprite_template_dash_left_69.aseprite": {
     "frame": { "x": 2070, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -559,7 +559,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_70.aseprite": {
+   "sprite_template_dash_left_70.aseprite": {
     "frame": { "x": 2100, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -567,7 +567,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_71.aseprite": {
+   "sprite_template_dash_left_71.aseprite": {
     "frame": { "x": 2130, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -575,7 +575,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_72.aseprite": {
+   "sprite_template_dash_left_72.aseprite": {
     "frame": { "x": 2160, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -583,7 +583,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_73.aseprite": {
+   "sprite_template_dash_up_73.aseprite": {
     "frame": { "x": 2190, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -591,7 +591,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_74.aseprite": {
+   "sprite_template_dash_up_74.aseprite": {
     "frame": { "x": 2220, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -599,7 +599,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_75.aseprite": {
+   "sprite_template_dash_up_75.aseprite": {
     "frame": { "x": 2250, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -607,7 +607,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_76.aseprite": {
+   "sprite_template_dash_up_76.aseprite": {
     "frame": { "x": 2280, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -615,7 +615,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_77.aseprite": {
+   "sprite_template_dash_up_77.aseprite": {
     "frame": { "x": 2310, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -623,7 +623,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_78.aseprite": {
+   "sprite_template_dash_up_78.aseprite": {
     "frame": { "x": 2340, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -631,7 +631,7 @@
     "sourceSize": { "w": 30, "h": 30 },
     "duration": 100
    },
-   "sprite_template_79.aseprite": {
+   "sprite_template_dash_up_79.aseprite": {
     "frame": { "x": 2370, "y": 0, "w": 30, "h": 30 },
     "rotated": false,
     "trimmed": false,
@@ -643,7 +643,7 @@
  "meta": {
   "app": "https://www.aseprite.org/",
   "version": "1.3.14.4-x64",
-  "image": "eyes_1.png",
+  "image": "eyes_2.png",
   "format": "RGBA8888",
   "size": { "w": 2400, "h": 30 },
   "scale": "1",
@@ -662,7 +662,7 @@
    { "name": "dash_up", "from": 73, "to": 79, "direction": "forward", "color": "#000000ff" }
   ],
   "layers": [
-   { "name": "eyes", "opacity": 255, "blendMode": "normal" }
+   { "name": "eyes_2", "opacity": 255, "blendMode": "normal" }
   ],
   "slices": [
   ]
